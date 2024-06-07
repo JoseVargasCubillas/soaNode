@@ -1,3 +1,14 @@
-const express = require('express'); const app = express(); const port = 3000;  app.get('/api/v1/healt', (req,res) =>{     res.send('Hola carnal Sus'); });  app.listen(port, () => {     console.log('server is running'); });
+const express = require('express');
+const app = express();
 
+const PORT = process.env.PORT || 3000;
 
+app.get('/api/v1/welcome', (req, res) => {
+    res.send('hola carnal sus');
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+module.exports = app;
